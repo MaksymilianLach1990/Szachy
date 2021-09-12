@@ -1,18 +1,16 @@
 # Potrzebne moduły
 import turtle
-import random
 
-# Nazwy dla funkcji
-los = random.randint(0, 255)
+# Nazwy dla funkcji 
 pen = turtle.Turtle()
 #  POZIOM - PUNKT STARTOWY
 stax = 0 - (700/2-140)
 #  PION - PUNKT STARTOWY
 stay = 0 + (700/2+10)
-
+pen.hideturtle()
+pen.speed(0)
 
 # Funkcje odpowiadające za wygląd graficzny
-
 
 # PLANSZA
 # Nadawanie konkretnego koloru polom na planszy i pionką
@@ -102,7 +100,6 @@ def poziom():
         pen.goto(x, y)
 
 
-# FIGÓRY
 # Pionek
 def pionek(color):
     punkt = pen.pos()
@@ -116,6 +113,7 @@ def pionek(color):
     pen.up()
 
 
+# FIGÓRY
 # Wierza
 def wierza(color):
     punkt = pen.pos()
@@ -228,3 +226,10 @@ def krol(color):
     pen.end_fill()
     pen.up()
 
+
+# Informacja o nieprawidłowym ruchu
+def error_message():
+    pen.up()
+    pen.goto(x=-440, y=-200)
+    pen.color("red")
+    pen.write("Niedozwolony ruch!!!", font=('Arial', 16, 'normal'))
