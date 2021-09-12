@@ -75,5 +75,4 @@ if __name__ == '__main__':
     plansza()
     pen.up()
     print(time.time() - t)
-    pen.textinput()
     turtle.done()

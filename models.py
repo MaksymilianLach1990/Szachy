@@ -13,6 +13,8 @@ stay = 0 + (700/2+10)
 
 # Funkcje odpowiadające za wygląd graficzny
 
+
+# PLANSZA
 # Nadawanie konkretnego koloru polom na planszy i pionką
 def kolor(color):
     pen.color('black')
@@ -99,4 +101,130 @@ def poziom():
         x += 80
         pen.goto(x, y)
 
+
+# FIGÓRY
+# Pionek
+def pionek(color):
+    punkt = pen.pos()
+    pen.goto(x=punkt[0] + 40, y=punkt[1] - 60)
+    pen.down()
+    pen.begin_fill()
+    kolor(color)
+    pen.seth(0)
+    pen.circle(20)
+    pen.end_fill()
+    pen.up()
+
+
+# Wierza
+def wierza(color):
+    punkt = pen.pos()
+    pen.begin_fill()
+    kolor(color)
+    pen.seth(0)
+    pen.goto(x=punkt[0] + 20, y=punkt[1] - 10)
+    pen.down()
+    for p in range(2):
+        pen.forward(40)
+        pen.right(90)
+        pen.forward(60)
+        pen.right(90)
+    pen.end_fill()
+    pen.up()
+
+
+# Goniec
+def goniec(color):
+    punkt = pen.pos()
+    pen.seth(180)
+    pen.begin_fill()
+    kolor(color)
+    pen.goto(x=punkt[0] + 70, y=punkt[1] - 70)
+    pen.down()
+    for g in range(3):
+        pen.forward(60)
+        pen.right(120)
+    pen.end_fill()
+    pen.up()
+
+
+# Skoczek
+def skoczek(color):
+    punkt = pen.pos()
+    kolor(color)
+    pen.seth(180)
+    pen.begin_fill()
+    pen.goto(x=punkt[0] + 60, y=punkt[1] - 70)
+    pen.down()
+    pen.forward(40)
+    pen.right(120)
+    pen.forward(40)
+    pen.right(60)
+    pen.left(90)
+    for q in range(3):
+        pen.forward(20)
+        pen.left(120)
+    pen.seth(60)
+    pen.right(120)
+    pen.forward(40)
+    pen.end_fill()
+    pen.up()
+
+
+# Królowa
+def krolowa(color):
+    punkt = pen.pos()
+    pen.seth(0)
+    kolor(color)
+    pen.begin_fill()
+    pen.goto(x=punkt[0] + 25, y=punkt[1] - 75)
+    pen.down()
+    pen.forward(30)
+    pen.left(90)
+    pen.forward(50)
+    pen.right(110)
+    pen.circle(10)
+    pen.seth(180)
+    pen.forward(30)
+    pen.right(160)
+    pen.circle(10)
+    pen.seth(-90)
+    pen.forward(50)
+    pen.end_fill()
+    pen.up()
+
+
+# Król
+def krol(color):
+    punkt = pen.pos()
+    pen.seth(0)
+    pen.begin_fill()
+    kolor(color)
+    pen.goto(x=punkt[0] + 25, y=punkt[1] - 70)
+    pen.down()
+    pen.forward(30)
+    pen.left(90)
+    pen.forward(50)
+    pen.right(90)
+    pen.forward(5)
+    pen.left(90)
+    pen.forward(10)
+    pen.left(90)
+    pen.forward(10)
+    pen.left(90)
+    pen.forward(10)
+    pen.right(90)
+    pen.forward(20)
+    pen.right(90)
+    pen.forward(10)
+    pen.left(90)
+    pen.forward(10)
+    pen.left(90)
+    pen.forward(10)
+    pen.left(90)
+    pen.forward(5)
+    pen.right(90)
+    pen.forward(50)
+    pen.end_fill()
+    pen.up()
 
