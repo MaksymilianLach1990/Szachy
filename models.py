@@ -233,3 +233,21 @@ def error_message():
     pen.goto(x=-440, y=-200)
     pen.color("red")
     pen.write("Niedozwolony ruch!!!", font=('Arial', 16, 'normal'))
+
+
+# Zmazywanie informacji o złym ruchu
+def erasing():
+    pen.up()
+    pen.goto(x=-440, y=-200)
+    pen.fillcolor("white")
+    pen.begin_fill()
+    pen.seth(0)
+    for ruch in range(2):
+        pen.forward(200)
+        pen.right(-90)
+        pen.forward(50)
+        pen.right(-90)
+    pen.end_fill()
+
+if __name__ == '__main__':
+    pass

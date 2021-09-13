@@ -59,7 +59,7 @@ def plansza():
     pion()
     poziom()
     wspolrzedne = list(pole_kolor.keys())
-    for i in wspolrzedne[0: 2]:
+    for i in wspolrzedne:
         znajdz(i)
         pole(pole_kolor[i])
 
@@ -155,17 +155,17 @@ def info_from_player(strona, runda, team):
         pole_end =  (pen.screen.textinput("Runda {} - {}".format(runda, team), "Podaj na jakie pole")).upper()  # Pole docelowe
         if pole_start and pole_end in pole_plansza:
             if strona == 0 and pole_figora[pole_start] == team_biale[pole_start]:
+                erasing()
                 ruch(pole_start, pole_end, strona=0)
                 break
             elif strona == 1 and pole_figora[pole_start] == team_czarne[pole_start]:
+                erasing()
                 ruch(pole_start, pole_end, strona=1)
                 break
         else:
             error_message()
             continue
-        
-        
-    
+
 
 # Uruchomienie programu
 if __name__ == '__main__':
@@ -184,5 +184,10 @@ if __name__ == '__main__':
             team = "Białe"
         info_from_player(druzyna, runda, team)
     
-
+# Ustalenie ruchów / zasad porruszania się pionkami
+# Zmazywanie informacji o złym RUCHU
+# Przetłumaczenie tekstów na angielski
+# Poprawienie nazewnictwa
+# Funkcja podpowiedzi - jakie masz możliwe ruchy (niebieskie-normalne, czerwone-zabijanie)
+# 
 turtle.done()
